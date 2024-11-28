@@ -3,15 +3,17 @@ import React, { Component, useEffect } from "react";
 import {
   UIKitProvider,
   Chat,
-  // ConversationList,
+  ConversationList,
   useClient,
   rootStore,
 } from "agora-chat-uikit";
+
 import "agora-chat-uikit/style.css";
+import "./styles/chatApp.css"
 
 const appKey = "61717166#1069763"; // your appKey
-const user = "demo_user_3"; // your user ID
-const agoraToken = "007eJxTYJj86Ovzxcc69Xd9ir+2JKj2G4e0mHDf3Qecs98vtizzXuGlwJCSbJySbJ6aaGCWYmFiYZpsmWxklmqelJhiYGJhnmRssvqpW3pDICNDsaIKEyMDKwMjEIL4KgzGpibJ5iaGBropiUlmuoaGqam6lhZJhromlikGFkaG5qbJJkkAaFUosQ=="; // agora chat token
+const user = "demo_user_1"; // your user ID
+const agoraToken = "007eJxTYAh12R7MoObQzuNc2HXt8IaNZ2TfpvT+4337feX9Z39uJ+9WYEhJNk5JNk9NNDBLsTCxME22TDYySzVPSkwxMLEwTzI2UajxSG8IZGRI2XOUgZGBFYgZGUB8FQajlBQDc7NUA13LFENzXUPD1DRdSzOLNN0kc0PLFNO0RJPUFDMAWU8qCg=="; // agora chat token
 
 const conversation = {
   chatType: "groupChat", // 'singleChat' || 'groupChat'
@@ -42,11 +44,11 @@ const ChatApp = () => {
     }}) 
 
   return (
-    <div>
-      {/* <div>
+    <div className="agora-chat-app-wrap">
+      <div className="agora-chat-conversation-list-wrap">
         <ConversationList />
-      </div> */}
-      <div>
+      </div>
+      <div className="agora-chat-message-list-wrap">
         <Chat />
       </div>
     </div>
