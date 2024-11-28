@@ -1,22 +1,22 @@
 // App.js
 import React, { Component, useEffect } from "react";
 import {
-  Provider,
+  UIKitProvider,
   Chat,
-  ConversationList,
+  // ConversationList,
   useClient,
   rootStore,
 } from "agora-chat-uikit";
 import "agora-chat-uikit/style.css";
 
-const appKey = "you app key"; // your appKey
-const user = ""; // your user ID
-const agoraToken = ""; // agora chat token
+const appKey = "61717166#1069763"; // your appKey
+const user = "demo_user_3"; // your user ID
+const agoraToken = "007eJxTYJj86Ovzxcc69Xd9ir+2JKj2G4e0mHDf3Qecs98vtizzXuGlwJCSbJySbJ6aaGCWYmFiYZpsmWxklmqelJhiYGJhnmRssvqpW3pDICNDsaIKEyMDKwMjEIL4KgzGpibJ5iaGBropiUlmuoaGqam6lhZJhromlikGFkaG5qbJJkkAaFUosQ=="; // agora chat token
 
 const conversation = {
-  chatType: "singleChat", // 'singleChat' || 'groupChat'
-  conversationId: "agora", // target user id or group id
-  name: "Agora", // target user nickname or group name
+  chatType: "groupChat", // 'singleChat' || 'groupChat'
+  conversationId: "251315614711817", // target user id or group id
+  name: "Test Group", // target user nickname or group name
   lastMessage: {},
 };
 
@@ -43,9 +43,9 @@ const ChatApp = () => {
 
   return (
     <div>
-      <div>
+      {/* <div>
         <ConversationList />
-      </div>
+      </div> */}
       <div>
         <Chat />
       </div>
@@ -56,13 +56,14 @@ const ChatApp = () => {
 class App extends Component {
   render() {
     return (
-      <Provider
+      <UIKitProvider
         initConfig={{
           appKey,
+          useUserInfo: true
         }}
       >
         <ChatApp />
-      </Provider>
+      </UIKitProvider>
     );
   }
 }
